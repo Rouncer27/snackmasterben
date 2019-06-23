@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    title: `Snack Master Ben`,
+    description: `Just an old dude that loves to cook for folks, has lots of fun and wants to share recipes and stories with others. Hope you enjoy the food and the stories. Low production value but good food and fun. Eat well, tell stories...be kind.`,
     author: `@gatsbyjs`,
   },
   plugins: [
