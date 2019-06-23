@@ -19,7 +19,7 @@ const IndexPage = () => (
     >
       <h1>OMG! Shut the front door!</h1>
       <h3>This website is still being cooked.</h3>
-      <p>nomnom!</p>
+      <p>Om Nom!</p>
       <p>Come back soon and see what we've Ben cookin</p>
       <a
         target="_blank"
@@ -59,6 +59,17 @@ const IndexPage = () => (
         to share recipes and stories with others. Hope you enjoy the food and
         the stories. Low production value but good food and fun. Eat well, tell
         stories...be kind.
+      </p>
+      <p
+        style={{
+          marginTop: "15px",
+          marginBottom: "0px",
+          fontWeight: "bold",
+          fontSize: "14px",
+        }}
+      >
+        With this website I want to create a community and home base for the
+        fans of the Om Nom man himself: Snack Master Ben.
       </p>
     </div>
   </Layout>
