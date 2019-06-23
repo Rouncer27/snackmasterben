@@ -620,3 +620,11 @@ pre tt:after {
     font-size: 100%;
   }
 }
+
+p {
+  font-family: "Lato";
+}
+
+h3 {
+  font-family: "Yellowtail";
+}
