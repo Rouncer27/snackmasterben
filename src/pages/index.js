@@ -69,7 +69,7 @@ const IndexPage = () => (
         }}
       >
         With this website I want to create a community and home base for the
-        fans of the Om Nom man himself: Snack Master Ben.
+        fans of the Om Nom.
       </p>
     </div>
   </Layout>
