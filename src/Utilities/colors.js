@@ -16,6 +16,7 @@ export default {
   colorSecondary,
   colorTertiary,
   colorAccent,
+  colorShadow,
   cloudBlue,
   sliver,
   sliverSand,
