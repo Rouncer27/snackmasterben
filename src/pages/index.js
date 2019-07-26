@@ -110,6 +110,13 @@ const EpisodeTitle = styled.div`
   h2 {
     width: 100%;
     margin-bottom: 0;
+    color: ${colors.colorSecondary};
+  }
+
+  p {
+    width: 100%;
+    margin-bottom: 0;
+    color: ${colors.colorSecondary};
   }
 `
 
