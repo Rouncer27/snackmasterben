@@ -9,7 +9,7 @@ import { standardWrapper, fontSizer, colors } from "../Utilities/"
 const EpisodeHero = styled.div`
   position: relative;
   width: 100%;
-  height: 40rem;
+  height: 30rem;
 
   @media (min-width: 786px) {
     height: 50rem;
