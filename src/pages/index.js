@@ -59,6 +59,7 @@ const EpisodesWrapper = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   width: 100%;
+  margin-bottom: 7.5rem;
 
   .single-episode:nth-of-type(4n + 1) {
     .catchphrase-section {
