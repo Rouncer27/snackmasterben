@@ -84,6 +84,25 @@ const EpisodeDescription = styled.div`
   }
 `
 
+const GoHomeButton = styled.div`
+  margin: 0 auto 5rem;
+
+  a {
+    ${fontSizer(1.4, 2, 76.8, 160)}
+    display: inline-block;
+    padding: 1rem 4rem;
+    border: 0.1rem solid ${colors.colorSecondary};
+    border-radius: 0.25rem;
+    color: ${colors.black};
+
+    &:hover {
+      background: ${colors.colorPrimary};
+      border-color: ${colors.colorPrimary};
+      color: ${colors.white};
+    }
+  }
+`
+
 const episodepost = ({ data }) => {
   const { title, date, youtubeVideo } = data.contentfulEpisodes
   const youtubeVideoEmbed =
@@ -112,6 +131,9 @@ const episodepost = ({ data }) => {
         <EpisodeDescription>
           <p>{data.contentfulEpisodes.description.description}</p>
         </EpisodeDescription>
+        <GoHomeButton>
+          <Link to="/">Its thyme to go home.</Link>
+        </GoHomeButton>
       </Wrapper>
     </Layout>
   )
