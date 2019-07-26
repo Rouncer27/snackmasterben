@@ -1,7 +1,39 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
+const path = require(`path`)
+const slash = require(`slash`)
 
-// You can delete this file if you're not using it
+exports.createPages = ({ graphql, actions }) => {
+  const { createPage } = actions
+  return graphql(
+    `
+      {
+        allContentfulEpisodes {
+          edges {
+            node {
+              id
+              slug
+            }
+          }
+        }
+      }
+    `
+  )
+    .then(result => {
+      if (result.errors) {
+        console.log("Error retrieving contentful data: ", result.errors)
+      }
+      const episodesTemplate = path.resolve("./src/templates/episodepost.js")
+      result.data.allContentfulEpisodes.edges.forEach(edge => {
+        createPage({
+          path: `/episodes/${edge.node.slug}/`,
+          component: slash(episodesTemplate),
+          context: {
+            slug: edge.node.slug,
+            id: edge.node.id,
+          },
+        })
+      })
+    })
+    .catch(error => {
+      console.log("Error retrieving contentful data", error)
+    })
+}

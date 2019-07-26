@@ -1,6 +1,9 @@
 import React from "react"
 import styled from "styled-components"
 import Img from "gatsby-image"
+import { Link } from "gatsby"
+
+import { colors, fontSizer } from "../Utilities/"
 
 const EpisodeWrapper = styled.div`
   width: 100%;
@@ -21,7 +24,7 @@ const EpisodeWrapper = styled.div`
   .catchphrase-section {
     position: relative;
     padding: 100px 50px;
-    background: #ff1654;
+    background: ${colors.colorPrimary};
 
     &:after {
       position: absolute;
@@ -29,33 +32,33 @@ const EpisodeWrapper = styled.div`
       right: 20px;
       width: 20px;
       height: 20px;
-      background: #ff1654;
+      background: ${colors.colorPrimary};
       transform: rotate(45deg);
       content: "";
       z-index: 10;
     }
 
     &__1 {
-      background: #247ba0;
+      background: ${colors.colorSecondary};
 
       &:after {
-        background: #247ba0;
+        background: ${colors.colorSecondary};
       }
     }
 
     &__2 {
-      background: #b2dbbf;
+      background: ${colors.colorTertiary};
 
       &:after {
-        background: #b2dbbf;
+        background: ${colors.colorTertiary};
       }
     }
 
     &__3 {
-      background: #70c1b3;
+      background: ${colors.colorAccent};
 
       &:after {
-        background: #70c1b3;
+        background: ${colors.colorAccent};
       }
     }
 
@@ -76,14 +79,14 @@ const EpisodeWrapper = styled.div`
       }
 
       &::before {
-        top: -10px;
-        left: -20px;
+        top: -4rem;
+        left: -2rem;
         content: "“";
       }
 
       &::after {
-        bottom: -30px;
-        right: -20px;
+        bottom: -6rem;
+        right: -2rem;
         content: "”";
       }
     }
@@ -95,11 +98,11 @@ const EpisodeWrapper = styled.div`
     height: 250px;
 
     h3 {
+      ${fontSizer(2, 3, 76.8, 110)}
       position: absolute;
       bottom: 1rem;
       left: 1rem;
       color: #fff;
-      font-family: "Lato";
       z-index: 10;
     }
 
@@ -122,21 +125,22 @@ const EpisodeWrapper = styled.div`
 `
 
 const Episodes = props => {
-  console.log(props.episode)
   return (
     <EpisodeWrapper>
-      <div class={`catchphrase-section catchphrase-section__${props.index}`}>
-        <p>{props.episode.catchphrase}</p>
-      </div>
-      <div className="image-section">
-        <h3>{props.episode.title}</h3>
-        <div className="image-section__featured">
-          <Img
-            fluid={props.episode.featuredImage.fluid}
-            alt={props.episode.title}
-          />
+      <Link to={`/episodes/${props.episode.slug}`}>
+        <div class={`catchphrase-section catchphrase-section__${props.index}`}>
+          <p>{props.episode.catchphrase}</p>
         </div>
-      </div>
+        <div className="image-section">
+          <h3>{props.episode.title}</h3>
+          <div className="image-section__featured">
+            <Img
+              fluid={props.episode.featuredImage.fluid}
+              alt={props.episode.title}
+            />
+          </div>
+        </div>
+      </Link>
     </EpisodeWrapper>
   )
 }

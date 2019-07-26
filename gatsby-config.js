@@ -10,21 +10,6 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
-      options: {
-        fonts: [
-          {
-            family: `Lato`,
-            subsets: [`latin`],
-            variants: [`300`, `300i`, `400`, `400i`, `700`, `700i`],
-          },
-          {
-            family: `Yellowtail`,
-          },
-        ],
-      },
-    },
-    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,

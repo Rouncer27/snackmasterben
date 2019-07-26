@@ -122,6 +122,7 @@ export const getTours = graphql`
           contentful_id
           title
           date
+          slug
           featuredImage {
             fluid {
               ...GatsbyContentfulFluid_withWebp
@@ -129,6 +130,9 @@ export const getTours = graphql`
           }
           description {
             description
+          }
+          youtubeVideoEmbed {
+            youtubeVideoEmbed
           }
           youtubeVideo
           catchphrase
