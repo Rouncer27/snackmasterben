@@ -157,6 +157,15 @@ const SocialMediaContainer = styled.div`
   }
 `
 
+const UrbanDictionary = styled.div`
+  width: 100%;
+  max-width: 65rem;
+  margin: 0 auto 5rem;
+  p {
+    ${fontSizer(1.4, 2.2, 76.8, 150)}
+  }
+`
+
 const IndexPage = props => {
   console.log(props.data.episodes.edges)
   const episodes = props.data.episodes.edges
@@ -226,6 +235,18 @@ const IndexPage = props => {
             )
           })}
         </EpisodesWrapper>
+        <UrbanDictionary>
+          <p>
+            What is a snackmaster anyways? Well from the urban dictionary...
+          </p>
+          <p>
+            Someone who has the perpetual munchies and rocks out the best snacks
+            ever. Highly inventive and can make edible and delicious snacks out
+            of the scraps in your barren cupboards. Have food? Prepare to be
+            dazzled! Word of caution: the Snackmaster can and will eat you out
+            of home if you pass out before him/her
+          </p>
+        </UrbanDictionary>
       </Wrapper>
     </Layout>
   )

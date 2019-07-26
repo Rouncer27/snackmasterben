@@ -4,10 +4,15 @@ import React from "react"
 import styled from "styled-components"
 
 import { colors, fontSizer } from "../Utilities/"
+import SMBLogo from "./SMBLogo"
 
 const MainTitle = styled.h1`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0;
   color: ${colors.white};
-  font-size: ${fontSizer(2, 4, 76.8, 110)};
+  font-size: ${fontSizer(2, 3, 76.8, 110)};
 
   a {
     color: ${colors.white};
@@ -17,8 +22,20 @@ const MainTitle = styled.h1`
 
 const Tagline = styled.p`
   margin: 0;
+  margin-top: 1rem;
   color: ${colors.white};
   font-size: ${fontSizer(1.4, 1.8, 76.8, 110)};
+  text-align: center;
+`
+
+const SiteTitleContainer = styled.div`
+  width: 100%;
+  text-align: center;
+`
+
+const LogoContainer = styled.div`
+  width: 100%;
+  max-width: 17.5rem;
 `
 
 const Header = ({ siteTitle }) => (
@@ -35,7 +52,14 @@ const Header = ({ siteTitle }) => (
       }}
     >
       <MainTitle>
-        <Link to="/">{siteTitle}</Link>
+        <LogoContainer>
+          <Link to="/">
+            <SMBLogo />
+          </Link>
+        </LogoContainer>
+        <SiteTitleContainer>
+          {/* <Link to="/">{siteTitle}</Link> */}
+        </SiteTitleContainer>
       </MainTitle>
       <Tagline>Eat well, tell stories... be kind.</Tagline>
     </div>
