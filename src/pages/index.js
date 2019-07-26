@@ -10,7 +10,32 @@ import SEO from "../components/seo"
 import Episodes from "../components/Episodes"
 import YouTubeIcon from "../components/YouTubeIcon"
 
-import { BigWrapper, colors } from "../Utilities/"
+import { BigWrapper, colors, fontSizer } from "../Utilities/"
+
+const IntroSection = styled.div`
+  margin: 2rem auto;
+  text-align: center;
+
+  h2 {
+    ${fontSizer(3, 6, 76.8, 150)}
+    margin-bottom: 0;
+    color: ${colors.colorSecondary};
+    line-height: 1.25;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  p:first-of-type {
+    ${fontSizer(2, 3, 76.8, 150)}
+    margin-top: 0;
+    margin-bottom: 2rem;
+    color: ${colors.colorPrimary};
+    text-transform: uppercase;
+    line-height: 1.25;
+  }
+`
 
 const Wrapper = styled.div`
   ${BigWrapper}
@@ -120,6 +145,18 @@ const EpisodeTitle = styled.div`
   }
 `
 
+const SocialMediaContainer = styled.div`
+  margin-top: 5rem;
+  p {
+    ${fontSizer(1.4, 2, 76.8, 150)}
+    margin-bottom: 0;
+  }
+
+  a {
+    margin-left: 0;
+  }
+`
+
 const IndexPage = props => {
   console.log(props.data.episodes.edges)
   const episodes = props.data.episodes.edges
@@ -127,22 +164,10 @@ const IndexPage = props => {
     <Layout>
       <SEO title="Snack Master Ben" />
       <Wrapper>
-        <div
-          style={{
-            marginRight: "auto",
-            marginLeft: "auto",
-            marginTop: "25px",
-            marginBottom: "25px",
-            textAlign: "center",
-          }}
-        >
-          <h1>OMG! Shut the front door!</h1>
-          <h3>This website is still being cooked.</h3>
+        <IntroSection>
+          <h2>OMG! Shut the front door!</h2>
           <p>Om Nom!</p>
-          <p>Come back soon and see what we've Ben cookin</p>
-          <p>In the mean time checkout my youtube channel</p>
-          <YouTubeIcon />
-        </div>
+        </IntroSection>
 
         <AboutBen>
           <div className="food-profile-image">
@@ -178,6 +203,11 @@ const IndexPage = props => {
               With this website I want to create a community and home base for
               the fans of the Om Nom.
             </p>
+            <SocialMediaContainer>
+              <p>Come back often and see what we've Ben cookin</p>
+              <p>Checkout my youtube channel</p>
+              <YouTubeIcon />
+            </SocialMediaContainer>
           </div>
         </AboutBen>
 
