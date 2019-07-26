@@ -55,11 +55,17 @@ const AboutBen = styled.div`
 
     @media (min-width: 768px) {
       width: calc(50% - 5rem);
+
       margin-right: 5rem;
     }
 
     .gatsby-image-wrapper {
       max-width: 100% !important;
+      max-height: 35rem !important;
+
+      @media (min-width: 768px) {
+        max-height: 100% !important;
+      }
     }
   }
   .ben-profile-wrapper {
@@ -187,7 +193,7 @@ const IndexPage = props => {
               <Image />
             </div>
             <p style={{ marginBottom: "0px", fontWeight: "bold" }}>
-              About Snack Master Ben...
+              About Snackmaster Ben...
             </p>
             <p
               style={{
