@@ -7,6 +7,7 @@ import theme from "./styles/Theme"
 import GlobalStyle from "./styles/Golbal"
 
 import Header from "./header"
+import Footer from "./Footer"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -26,11 +27,7 @@ const Layout = ({ children }) => {
           <GlobalStyle />
           <Header siteTitle={data.site.siteMetadata.title} />
           <main>{children}</main>
-          <footer>
-            © {new Date().getFullYear()} Snack Master Ben, Built with Love &
-            {` `}
-            <a href="https://www.gatsbyjs.org">Gatsby</a>
-          </footer>
+          <Footer />
         </React.Fragment>
       </ThemeProvider>
     </>
