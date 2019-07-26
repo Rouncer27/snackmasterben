@@ -10,7 +10,7 @@ import SEO from "../components/seo"
 import Episodes from "../components/Episodes"
 import YouTubeIcon from "../components/YouTubeIcon"
 
-import { BigWrapper } from "../Utilities/"
+import { BigWrapper, colors } from "../Utilities/"
 
 const Wrapper = styled.div`
   ${BigWrapper}
@@ -59,6 +59,46 @@ const EpisodesWrapper = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   width: 100%;
+
+  .single-episode:nth-of-type(4n + 1) {
+    .catchphrase-section {
+      background: ${colors.colorSecondary};
+
+      &:after {
+        background: ${colors.colorSecondary};
+      }
+    }
+  }
+
+  .single-episode:nth-of-type(4n + 2) {
+    .catchphrase-section {
+      background: ${colors.colorTertiary};
+
+      &:after {
+        background: ${colors.colorTertiary};
+      }
+    }
+  }
+
+  .single-episode:nth-of-type(4n + 3) {
+    .catchphrase-section {
+      background: ${colors.colorAccent};
+
+      &:after {
+        background: ${colors.colorAccent};
+      }
+    }
+  }
+
+  .single-episode:nth-of-type(4n + 4) {
+    .catchphrase-section {
+      background: ${colors.colorPrimary};
+
+      &:after {
+        background: ${colors.colorPrimary};
+      }
+    }
+  }
 `
 
 const EpisodeTitle = styled.div`

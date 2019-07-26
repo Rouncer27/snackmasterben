@@ -25,7 +25,6 @@ const EpisodeWrapper = styled.div`
   .catchphrase-section {
     position: relative;
     padding: 100px 50px;
-    background: ${colors.colorPrimary};
 
     &:after {
       position: absolute;
@@ -33,34 +32,10 @@ const EpisodeWrapper = styled.div`
       right: 20px;
       width: 20px;
       height: 20px;
-      background: ${colors.colorPrimary};
+
       transform: rotate(45deg);
       content: "";
       z-index: 10;
-    }
-
-    &__1 {
-      background: ${colors.colorSecondary};
-
-      &:after {
-        background: ${colors.colorSecondary};
-      }
-    }
-
-    &__2 {
-      background: ${colors.colorTertiary};
-
-      &:after {
-        background: ${colors.colorTertiary};
-      }
-    }
-
-    &__3 {
-      background: ${colors.colorAccent};
-
-      &:after {
-        background: ${colors.colorAccent};
-      }
     }
 
     p {
@@ -133,7 +108,7 @@ const EpisodeWrapper = styled.div`
 
 const Episodes = props => {
   return (
-    <EpisodeWrapper>
+    <EpisodeWrapper className="single-episode">
       <Link to={`/episodes/${props.episode.slug}`}>
         <div class={`catchphrase-section catchphrase-section__${props.index}`}>
           <p>{props.episode.catchphrase}</p>
