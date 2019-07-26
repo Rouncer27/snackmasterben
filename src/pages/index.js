@@ -8,6 +8,7 @@ import Image from "../components/image"
 import ProfileFoodImage from "../components/ProfileFoodImage"
 import SEO from "../components/seo"
 import Episodes from "../components/Episodes"
+import YouTubeIcon from "../components/YouTubeIcon"
 
 import { BigWrapper } from "../Utilities/"
 
@@ -91,20 +92,8 @@ const IndexPage = props => {
           <h3>This website is still being cooked.</h3>
           <p>Om Nom!</p>
           <p>Come back soon and see what we've Ben cookin</p>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              textDecoration: "none",
-              marginBottom: "0px",
-              fontWeight: "bold",
-              fontSize: "22px",
-              color: "#bada55",
-            }}
-            href="https://www.youtube.com/channel/UCDnu7ZmLZUHSNQtyI6XCX-A"
-          >
-            In the mean time checkout my youtube channel
-          </a>
+          <p>In the mean time checkout my youtube channel</p>
+          <YouTubeIcon />
         </div>
 
         <AboutBen>
