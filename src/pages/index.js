@@ -5,6 +5,7 @@ import styled from "styled-components"
 
 import Layout from "../components/layout"
 import Image from "../components/image"
+import ProfileFoodImage from "../components/ProfileFoodImage"
 import SEO from "../components/seo"
 import Episodes from "../components/Episodes"
 
@@ -12,6 +13,44 @@ import { BigWrapper } from "../Utilities/"
 
 const Wrapper = styled.div`
   ${BigWrapper}
+`
+
+const AboutBen = styled.div`
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  margin-top: 5rem;
+
+  .food-profile-image {
+    width: 100%;
+    max-width: 100%;
+
+    @media (min-width: 768px) {
+      width: calc(50% - 5rem);
+      margin-right: 5rem;
+    }
+
+    .gatsby-image-wrapper {
+      max-width: 100% !important;
+    }
+  }
+  .ben-profile-wrapper {
+    width: 100%;
+
+    @media (min-width: 768px) {
+      width: calc(50% - 10rem);
+      margin-left: 5rem;
+      margin-right: 5rem;
+    }
+  }
+  .ben-profile-image {
+    max-width: 12.5rem;
+    margin: 2.5rem auto 2.5rem 0;
+    border-radius: 50%;
+    overflow: hidden;
+  }
 `
 
 const EpisodesWrapper = styled.div`
@@ -23,9 +62,12 @@ const EpisodesWrapper = styled.div`
 
 const EpisodeTitle = styled.div`
   width: 100%;
+  padding: 5rem 0;
+  text-align: center;
 
   h2 {
     width: 100%;
+    margin-bottom: 0;
   }
 `
 
@@ -65,47 +107,42 @@ const IndexPage = props => {
           </a>
         </div>
 
-        <div style={{ marginTop: "25px", marginBottom: "25px" }}>
-          <div
-            style={{
-              maxWidth: "125px",
-              marginRight: "auto",
-              marginLeft: "0",
-              marginTop: "25px",
-              marginBottom: "25px",
-              borderRadius: "50%",
-              overflow: "hidden",
-            }}
-          >
-            <Image />
+        <AboutBen>
+          <div className="food-profile-image">
+            <ProfileFoodImage />
           </div>
-          <p style={{ marginBottom: "0px", fontWeight: "bold" }}>
-            About Snack Master Ben...
-          </p>
-          <p
-            style={{
-              marginBottom: "0px",
-              fontWeight: "bold",
-              fontSize: "14px",
-            }}
-          >
-            Just an old dude that loves to cook for folks, has lots of fun and
-            wants to share recipes and stories with others. Hope you enjoy the
-            food and the stories. Low production value but good food and fun.
-            Eat well, tell stories...be kind.
-          </p>
-          <p
-            style={{
-              marginTop: "15px",
-              marginBottom: "0px",
-              fontWeight: "bold",
-              fontSize: "14px",
-            }}
-          >
-            With this website I want to create a community and home base for the
-            fans of the Om Nom.
-          </p>
-        </div>
+          <div className="ben-profile-wrapper">
+            <div className="ben-profile-image">
+              <Image />
+            </div>
+            <p style={{ marginBottom: "0px", fontWeight: "bold" }}>
+              About Snack Master Ben...
+            </p>
+            <p
+              style={{
+                marginBottom: "0px",
+                fontWeight: "bold",
+                fontSize: "14px",
+              }}
+            >
+              Just an old dude that loves to cook for folks, has lots of fun and
+              wants to share recipes and stories with others. Hope you enjoy the
+              food and the stories. Low production value but good food and fun.
+              Eat well, tell stories...be kind.
+            </p>
+            <p
+              style={{
+                marginTop: "15px",
+                marginBottom: "0px",
+                fontWeight: "bold",
+                fontSize: "14px",
+              }}
+            >
+              With this website I want to create a community and home base for
+              the fans of the Om Nom.
+            </p>
+          </div>
+        </AboutBen>
 
         <EpisodesWrapper>
           <EpisodeTitle>
