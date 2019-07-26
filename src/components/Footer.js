@@ -55,8 +55,7 @@ const Footer = () => {
         </FooterSocialMedia>
         <FooterCopy>
           <p>
-            © {new Date().getFullYear()} Snack Master Ben, Built with Love &
-            {` `}
+            © {new Date().getFullYear()} Snackmaster Ben, Built with Love &{` `}
             <a href="https://www.gatsbyjs.org">Gatsby</a>.{" "}
             <span>A side hustle by @ROUNCER27</span>
           </p>

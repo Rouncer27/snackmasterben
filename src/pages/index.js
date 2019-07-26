@@ -171,7 +171,7 @@ const IndexPage = props => {
   const episodes = props.data.episodes.edges
   return (
     <Layout>
-      <SEO title="Snack Master Ben" />
+      <SEO title="Snackmaster Ben" />
       <Wrapper>
         <IntroSection>
           <h2>OMG! Shut the front door!</h2>
