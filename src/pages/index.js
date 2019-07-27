@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import { graphql } from "gatsby"
 import styled from "styled-components"
+import { FaMap } from "react-icons/fa"
 
 import Layout from "../components/layout"
 import Image from "../components/image"
@@ -228,7 +229,9 @@ const IndexPage = props => {
 
         <EpisodesWrapper>
           <EpisodeTitle>
-            <h2>Come for the fun, stay for the food.</h2>
+            <h2>
+              Come for the fun, stay for the food. <FaMap />
+            </h2>
             <p>Watch the latest episodes and adventures of the Snackmaster.</p>
           </EpisodeTitle>
           {episodes.map((episode, index) => {

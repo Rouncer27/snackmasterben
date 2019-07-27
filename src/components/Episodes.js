@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import Img from "gatsby-image"
 import { Link } from "gatsby"
+import PropTypes from "prop-types"
 
 import { colors, fontSizer } from "../Utilities/"
 
@@ -107,24 +108,33 @@ const EpisodeWrapper = styled.div`
 `
 
 const Episodes = props => {
+  const { episode } = props
   return (
     <EpisodeWrapper className="single-episode">
-      <Link to={`/episodes/${props.episode.slug}`}>
-        <div class={`catchphrase-section catchphrase-section__${props.index}`}>
-          <p>{props.episode.catchphrase}</p>
+      <Link to={`/episodes/${episode.slug}`}>
+        <div
+          className={`catchphrase-section catchphrase-section__${props.index}`}
+        >
+          <p>{episode.catchphrase}</p>
         </div>
         <div className="image-section">
-          <h3>{props.episode.title}</h3>
+          <h3>{episode.title}</h3>
           <div className="image-section__featured">
-            <Img
-              fluid={props.episode.featuredImage.fluid}
-              alt={props.episode.title}
-            />
+            <Img fluid={episode.featuredImage.fluid} alt={episode.title} />
           </div>
         </div>
       </Link>
     </EpisodeWrapper>
   )
+}
+
+Episodes.propTypes = {
+  episode: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    catchphrase: PropTypes.string.isRequired,
+    slug: PropTypes.string.isRequired,
+    featuredImage: PropTypes.object.isRequired,
+  }),
 }
 
 export default Episodes

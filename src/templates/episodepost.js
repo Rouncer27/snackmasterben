@@ -104,19 +104,19 @@ const GoHomeButton = styled.div`
 `
 
 const episodepost = ({ data }) => {
-  const { title, date, youtubeVideo } = data.contentfulEpisodes
+  const {
+    title,
+    date,
+    featuredImage,
+    description: { description },
+  } = data.episode
   const youtubeVideoEmbed =
-    data.contentfulEpisodes.youtubeVideoEmbed.content[0].content[0].value
-
-  console.log(data.contentfulEpisodes.description)
+    data.episode.youtubeVideoEmbed.content[0].content[0].value
   return (
     <Layout>
       <EpisodeHero>
         <div className="hero-img-wrapper">
-          <Img
-            fluid={data.contentfulEpisodes.featuredImage.fluid}
-            alt={title}
-          />
+          <Img fluid={featuredImage.fluid} alt={title} />
         </div>
         <div className="hero-title-wrapper">
           <h2>{title}</h2>
@@ -129,7 +129,8 @@ const episodepost = ({ data }) => {
       </EpisodeVideoWrap>
       <Wrapper>
         <EpisodeDescription>
-          <p>{data.contentfulEpisodes.description.description}</p>
+          <p>{date}</p>
+          <p>{description}</p>
         </EpisodeDescription>
         <GoHomeButton>
           <Link to="/">Its thyme to go home.</Link>
@@ -143,10 +144,10 @@ export default episodepost
 
 export const pageQuery = graphql`
   query($slug: String!) {
-    contentfulEpisodes(slug: { eq: $slug }) {
+    episode: contentfulEpisodes(slug: { eq: $slug }) {
       title
       slug
-      date
+      date(formatString: "dddd MMMM Do, YYYY")
       youtubeVideo
       catchphrase
       youtubeVideoEmbed {
